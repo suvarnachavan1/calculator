@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <div class="calculator">
+        <div type="text" id="result"><p id="temp">0</p></div> 
+        <div class="buttons">
+            <button id="c" onclick="clearDisplay()">clear</button>
+            <button id="/" onclick="get(this)">/</button>
+            <button id="-" onclick="get(this)">-</button>
+            <button id="+" onclick="get(this)">+</button>
+            <button id="7" onclick="get(this)">7</button>
+            <button id="8" onclick="get(this)">8</button>
+            <button id="9" onclick="get(this)">9</button>
+            <button id="*" onclick="get(this)">*</button>
+            <button id="4" onclick="get(this)">4</button>
+            <button id="5" onclick="get(this)">5</button>
+            <button id="6" onclick="get(this)">6</button>
+            <button id="equals" onclick="calculate()">=</button>
+            <button id="1" onclick="get(this)">1</button>
+            <button id="2" onclick="get(this)">2</button>
+            <button id="3" onclick="get(this)">3</button>
+            <button id="0" onclick="get(this)">0</button>
+            <button id="decimal">.</button>
+            <button id="decimal00">00</button>
+        </div>
+    </div>
+
+
+    <script>
+        
+        function get(value){
+            document.getElementById("temp").innerHTML=""
+            document.getElementById("result").innerHTML += value.id;
+        }
+
+        function calculate(){
+            var result = document.getElementById("result").textContent;
+            
+            document.getElementById("result").innerHTML = eval(result);
+
+        }
+        function clearDisplay() {
+        document.getElementById("result").innerHTML = '0';
+ }
+    </script>
+</body>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 2;
+  }
+  
+  .calculator {
+    background-color: black;
+    padding: 20px;
+    max-width: 400px;
+    margin: 10 auto;
+    border: solid 1px hsl(287, 74%, 47%);
+    box-shadow: 0 4px 5px pink;
+    border-radius: 20px;
+    margin-top: 40px;
+  }
+  
+  #result{
+     background-color: white;
+      width: 100%;
+      padding: 10px;
+      font-size: 24px;
+      border:20px ;
+      box-shadow: 0 2px 5px rgba(79, 18, 136, 0.3) ;
+      border-radius: 8px;
+  }
+  
+  .buttons{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+      margin-top: 20px;
+  }
+  
+  button{
+      padding: 10px;
+      font-size: 24px;
+      border: none;
+      box-shadow: 0 2px 5px #a8701e4d;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+  }
+  
+  button:hover{
+      background-color: black;
+  }
+  .clear{
+      background-color: aquamarine;
+      color: #fff;
+  } 
+  .number, .decimal{
+      background-color: pink;
+      color: #333;
+  }
+  .operator{
+      background-color: red;
+      color: #fff;
+  }
+  
+  .equals{
+      background-color: wheat;
+      grid-row: span 3;
+      color: #fff;
+  }
+</style>
+ </html>
+  
+  
+ 
